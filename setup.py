@@ -16,6 +16,10 @@ setup(
     author_email='jiffyclub@gmail.com',
     url='https://github.com/jiffyclub/caldwr',
     packages=find_packages(),
+    install_requires=[
+        'lxml >= 3.0',
+        'pandas >= 0.15'
+    ],
     tests_require=['pytest >= 2.4'],
     classifiers=[
         'License :: OSI Approved :: ISC License (ISCL)',
