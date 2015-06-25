@@ -14,13 +14,10 @@ def test_load_storagew(url):
     assert isinstance(data, pd.DataFrame)
 
 
-def test_load_storagew_month_and_year(url):
-    year = 2015
+def test_load_storagew_month(url):
     month = 'May'
-    data = storagew.load_storagew(url, year=year, month=month)
+    data = storagew.load_storagew(url, month=month)
 
     assert isinstance(data, pd.DataFrame)
-    assert 'year' in data
-    assert data['year'].iloc[0] == year
     assert 'month' in data
     assert data['month'].iloc[0] == month

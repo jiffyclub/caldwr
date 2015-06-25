@@ -61,7 +61,7 @@ def table_to_frame(table):
     return pd.DataFrame(data, columns=fields)
 
 
-def load_storagew(url, year=None, month=None):
+def load_storagew(url, month=None):
     """
     Load STORAGEW data from a URL into a DataFrame.
 
@@ -69,8 +69,6 @@ def load_storagew(url, year=None, month=None):
     ----------
     url : str
         URL of STORAGEW data on CDEC
-    year : object, optional
-        If provided a "year" column will be added to the data with this value.
     month : any, optional
         If provided a "month" column will be added to the data with this value.
 
@@ -80,9 +78,6 @@ def load_storagew(url, year=None, month=None):
 
     """
     df = table_to_frame(get_table(url))
-
-    if year:
-        df['year'] = year
 
     if month:
         df['month'] = month
